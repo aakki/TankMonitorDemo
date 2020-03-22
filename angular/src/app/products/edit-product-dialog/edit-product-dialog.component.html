@@ -12,7 +12,7 @@
                   matInput
                   name="ProductName"
                   [placeholder]="'ProductName' | localize"
-                  [(ngModel)]="product.ProductName"
+                  [(ngModel)]="product.productName"
                   required
                   minlength="2"
                   maxlength="32"
@@ -24,7 +24,7 @@
                   matInput
                   name="ShortName"
                   [placeholder]="'ShortName' | localize"
-                  [(ngModel)]="product.ShortName"
+                  [(ngModel)]="product.shortName"
                   required
                   minlength="2"
                   maxlength="32"
@@ -35,7 +35,7 @@
                   matInput
                   name="ProductCode"
                   [placeholder]="'ProductCode' | localize"
-                  [(ngModel)]="product.ProductCode"
+                  [(ngModel)]="product.productCode"
                   required
                   minlength="2"
                   maxlength="32"
@@ -46,11 +46,11 @@
                   matInput
                   name="Qty"
                   [placeholder]="'Qty' | localize"
-                  [(ngModel)]="product.Qty"
+                  [(ngModel)]="product.qty"
                 />
               </mat-form-field>
               <div class="checkbox-wrapper">
-                <mat-checkbox name="IsActive" [(ngModel)]="product.IsActive">
+                <mat-checkbox name="IsActive" [(ngModel)]="product.isActive">
                   {{ "IsActive" | localize }}
                 </mat-checkbox>
               </div>
