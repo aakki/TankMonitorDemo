@@ -1,0 +1,94 @@
+<form autocomplete="off" #editProductModal="ngForm" (ngSubmit)="save()">
+    <h1 mat-dialog-title>{{ "EditProduct" | localize }}</h1>
+    <mat-dialog-content style="width:800px;height:250px;">
+      <mat-tab-group>
+        <mat-tab [label]="'ProductDetails' | localize">
+          <br />
+          <div class="row-fluid">
+            <div class="col-md-6">
+              <mat-form-field>
+                  {{product.ProductName}}
+                <input
+                  matInput
+                  name="ProductName"
+                  [placeholder]="'ProductName' | localize"
+                  [(ngModel)]="product.ProductName"
+                  required
+                  minlength="2"
+                  maxlength="32"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                  {{product.ShortName}}
+                <input
+                  matInput
+                  name="ShortName"
+                  [placeholder]="'ShortName' | localize"
+                  [(ngModel)]="product.ShortName"
+                  required
+                  minlength="2"
+                  maxlength="32"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  name="ProductCode"
+                  [placeholder]="'ProductCode' | localize"
+                  [(ngModel)]="product.ProductCode"
+                  required
+                  minlength="2"
+                  maxlength="32"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  name="Qty"
+                  [placeholder]="'Qty' | localize"
+                  [(ngModel)]="product.Qty"
+                />
+              </mat-form-field>
+              <div class="checkbox-wrapper">
+                <mat-checkbox name="IsActive" [(ngModel)]="product.IsActive">
+                  {{ "IsActive" | localize }}
+                </mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <!-- <mat-tab [label]="'UserRoles' | localize">
+          <br />
+          <div class="row-fluid">
+            <ng-template ngFor let-role [ngForOf]="roles">
+              <div class="col-sm-6">
+                <div class="checkbox-wrapper">
+                  <mat-checkbox
+                    [checked]="isRoleChecked(role.normalizedName)"
+                    (change)="onRoleChange(role, $event)"
+                  >
+                    {{ role.name }}
+                  </mat-checkbox>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </mat-tab> -->
+      </mat-tab-group>
+    </mat-dialog-content>
+    <div mat-dialog-actions align="end">
+      <button mat-button type="button" [disabled]="saving" (click)="close(false)">
+        {{ "Cancel" | localize }}
+      </button>
+      <button
+        mat-flat-button
+        type="submit"
+        flex="15"
+        color="primary"
+        [disabled]="!editProductModal.form.valid || saving"
+      >
+        {{ "Save" | localize }}
+      </button>
+    </div>
+  </form>
+  
